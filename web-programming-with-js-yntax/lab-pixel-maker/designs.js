@@ -15,10 +15,11 @@ function makeGrid(width, height) {
   // Your code goes here!
   canvasSelector.innerHTML = '';
   
-  for (let w = 0; w < width; w++) {
+  for (let h = 0; h < height; h++) {
     let row = canvasSelector.insertRow(w);
     
-    for (let h = 0; h < height; h++) {
+    for (let w = 0; w < width; w++)
+     {
 		row.insertCell(h);
   	}
   }
