@@ -16,11 +16,10 @@ function makeGrid(width, height) {
   canvasSelector.innerHTML = '';
   
   for (let h = 0; h < height; h++) {
-    let row = canvasSelector.insertRow(w);
-    
-    for (let w = 0; w < width; w++)
-     {
-		row.insertCell(h);
+    let row = canvasSelector.insertRow(h);
+
+    for (let w = 0; w < width; w++) {
+		row.insertCell(w);
   	}
   }
 }
