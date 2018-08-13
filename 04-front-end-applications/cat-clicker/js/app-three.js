@@ -39,8 +39,6 @@ const cats = [
 
 const randomNum = Math.floor(Math.random() * cats.length);
 
-console.log(randomNum);
-
 catsDiv.append(
     '<div class="cat">' +
         '<h2 class="cat-name">' + 
@@ -127,9 +125,12 @@ catsDiv.on('click', 'button', (e) => {
 });
 
 reset.on('click', () => {
-    cats.forEach((cat) => {
-        cat.counter = 0;
-        catsDiv.find('h3').html(cat.counter);
-    });
+    let confirmReset = confirm('Are you sure?');
+    if (confirmReset) {
+        cats.forEach((cat) => {
+            cat.counter = 0;
+            catsDiv.find('h3').html(cat.counter);
+        });
+    }
 });
 

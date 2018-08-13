@@ -6,32 +6,32 @@ const reset = $('.reset');
 const cats = [
     {
         name: 'Salt',
-        url: 'img/cat2.jpeg', 
+        url: 'img/cat0.jpeg', 
         counter: 0
     },
     {
         name: 'Pepper',
-        url: 'img/cat.jpeg', 
+        url: 'img/cat1.jpeg', 
         counter: 0
     },
     {
         name: 'Oil',
-        url: 'img/cat3.jpeg', 
+        url: 'img/cat2.jpeg', 
         counter: 0
     },
     {
         name: 'Vinegar',
-        url: 'img/cat4.jpeg', 
+        url: 'img/cat3.jpeg', 
         counter: 0
     },
     {
         name: 'Bread',
-        url: 'img/cat5.jpeg', 
+        url: 'img/cat4.jpeg', 
         counter: 0
     },
     {
         name: 'Butter',
-        url: 'img/cat6.jpeg', 
+        url: 'img/cat5.jpeg', 
         counter: 0
     }
 ];
