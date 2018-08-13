@@ -8,25 +8,34 @@ body {
 }
 
 h1 {
-    font-size: 5em;
+    margin: 0 0 70px 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #8e44ad;
+    font-size: 4.5em;
     text-align: center;
-    text-shadow: 1px 1px #777;
+}
+
+img {
+    width: 100%;
+}
+
+.cats {
+    margin: 0 auto;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cat {
-    margin: -200px auto;
-    width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    width: 45%;
+    text-align: center
 }
 
-.cat-count {
-    font-size: 4em;
-    text-shadow: 1px 1px #777;
-    position: relative;
-    top: 325px;
+.cat-name, .cat-count {
+    margin: 20px 0;
+    font-size: 2.5em;
 }
 
 .cat-image {
@@ -36,15 +45,15 @@ h1 {
 }
 
 button {
-    margin-top: 40px;
+    margin-top: 10px;
     padding: 10px;
-    width: 200px;
+    width: 150px;
     background-color: transparent;
     border: 4px solid #fff;
     border-radius: 5px;
     outline: none;
     color: #fff;
-    font-size: 2em;
+    font-size: 1.5em;
     text-shadow: 1px 1px #777;
     cursor: pointer;
 }
