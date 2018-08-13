@@ -16,6 +16,29 @@ h1 {
     text-align: center;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    color: #bdc3c7;
+}
+
 img {
     width: 100%;
 }
@@ -26,10 +49,12 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap
 }
 
 .cat {
-    width: 45%;
+    margin: 20px auto;
+    width: 80%;
     text-align: center
 }
 
@@ -44,7 +69,7 @@ img {
     cursor: pointer;
 }
 
-button {
+button, .reset {
     margin-top: 10px;
     padding: 10px;
     width: 150px;
@@ -54,6 +79,14 @@ button {
     outline: none;
     color: #fff;
     font-size: 1.5em;
-    text-shadow: 1px 1px #777;
     cursor: pointer;
+}
+
+.reset {
+    text-align: center;
+    width: 350px;
+    margin: 50px auto;
+    border: none;
+    border: 2px solid #fff;
+    background-color: #c0392b;
 }
