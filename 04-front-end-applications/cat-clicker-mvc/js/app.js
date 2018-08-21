@@ -143,6 +143,9 @@ let view =  {
     }
 }
 
-let controller = {
-
+let controller = () => {
+    view.init();
+    view.render();
 }
+
+controller();
