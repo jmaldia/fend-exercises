@@ -1,5 +1,12 @@
+const catsDiv = $('.cats');
+const menu = $('.menu');
+const catCount = $('.cat-count');
+const button = $('button');
+const reset = $('.reset');
+
+
 let model = {
-    const cats = [
+    cats: [
         {
             name: 'Salt',
             url: 'img/cat0.jpeg', 
@@ -42,16 +49,9 @@ let model = {
 let view =  {
     // This sets up what is initially seen on the page
     init: () => {
-        const catsDiv = $('.cats');
-        const menu = $('.menu');
-        const catCount = $('.cat-count');
-        const button = $('button');
-        const reset = $('.reset');
-
-        const randomNum = Math.floor(Math.random() * cats.length);
 
         // This sets up the menu
-        cats.forEach((cat, index) => {
+        model.cats.forEach((cat, index) => {
             menu.append(
                 '<li class="li' +
                 index +
@@ -71,17 +71,17 @@ let view =  {
             catsDiv.append(
                 '<div class="cat">' +
                     '<h2 class="cat-name">' + 
-                    cats[index].name +
+                    model.cats[index].name +
                     '</h2><img class="cat-image" src="' +
-                    cats[index].url +
+                    model.cats[index].url +
                     '" alt="' +
-                    cats[index].name +
+                    model.cats[index].name +
                     '" data-index="' +
                     index +
                     '"><br><h3 class="cat-count index' +
                     index +
                     '">' + 
-                    cats[index].counter +
+                    model.cats[index].counter +
                     '</h3><br><button data-index="' +
                     index +
                     '">Reset</button>' +
@@ -92,7 +92,9 @@ let view =  {
         reset.on('click', () => {
             let confirmReset = confirm('Are you sure?');
             if (confirmReset) {
-                cats.forEach((cat) => {
+                console.log('1.', model.cats);
+                model.cats.forEach((cat) => {
+                    console.log('2.', cat);
                     cat.counter = 0;
                     catsDiv.find('h3').html(cat.counter);
                 });
@@ -103,20 +105,22 @@ let view =  {
 
     // This renders the featured cat
     render: () => {
+        const randomNum = Math.floor(Math.random() * model.cats.length);
+
         catsDiv.append(
             '<div class="cat">' +
                 '<h2 class="cat-name">' + 
-                cats[randomNum].name +
+                model.cats[randomNum].name +
                 '</h2><img class="cat-image" src="' +
-                cats[randomNum].url +
+                model.cats[randomNum].url +
                 '" alt="' +
-                cats[randomNum].name +
+                model.cats[randomNum].name +
                 '" data-index="' +
                 0 +
                 '"><br><h3 class="cat-count index' +
                 0 +
                 '">' + 
-                cats[randomNum].counter +
+                model.cats[randomNum].counter +
                 '</h3><br><button data-index="' +
                 0 +
                 '">Reset</button>' +
@@ -127,18 +131,18 @@ let view =  {
             let index = e.currentTarget.dataset.index;
             let h3Index = 'h3.index' + index;
         
-            cats[index].counter++;
+            model.cats[index].counter++;
         
-            catsDiv.find(h3Index).html(cats[index].counter);
+            catsDiv.find(h3Index).html(model.cats[index].counter);
         });
         
         catsDiv.on('click', 'button', (e) => {
             let index = e.currentTarget.dataset.index;
             let h3Index = 'h3.index' + index;
         
-            cats[index].counter = 0;
+            model.cats[index].counter = 0;
         
-            catsDiv.find(h3Index).html(cats[index].counter);
+            catsDiv.find(h3Index).html(model.cats[index].counter);
         });
     }
 }
@@ -147,5 +151,6 @@ let controller = () => {
     view.init();
     view.render();
 }
+
 
 controller();
